@@ -103,11 +103,25 @@ header p {
     border-radius: 10px;
     width: 200px;
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.command:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .command code {
     font-family: monospace;
     color: #7289da;
+    font-size: 1.1rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.command p {
+    font-size: 0.9rem;
+    color: #b0b0b0;
 }
 
 /* Footer */
