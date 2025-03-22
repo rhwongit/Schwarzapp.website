@@ -2,8 +2,6 @@
 #custom-bot {
     padding: 40px 20px;
     text-align: center;
-    background: #2c2f33;
-    margin: 20px 0;
 }
 
 .custom-bot-content {
@@ -11,8 +9,33 @@
     margin: 0 auto;
 }
 
-.custom-bot-content p {
-    font-size: 1.1rem;
+.custom-bot-content .card {
+    background: #2c2f33;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-bot-content .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.custom-bot-content .card i {
+    font-size: 2rem;
+    color: #7289da;
+    margin-bottom: 10px;
+}
+
+.custom-bot-content .card h3 {
+    font-size: 1.5rem;
+    color: #6495ED;
+    margin-bottom: 10px;
+}
+
+.custom-bot-content .card p {
+    font-size: 1rem;
     color: #b0b0b0;
     margin-bottom: 20px;
 }
