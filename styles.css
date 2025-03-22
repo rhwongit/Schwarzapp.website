@@ -2,14 +2,11 @@
 #custom-bot {
     padding: 40px 20px;
     text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .custom-bot-content {
     max-width: 600px;
-    width: 100%;
+    margin: 0 auto; /* Center the container */
 }
 
 .custom-bot-content .card {
@@ -18,7 +15,7 @@
     border-radius: 10px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin: 0 auto; /* Center the card horizontally */
+    width: 100%; /* Ensure the card takes full width of its container */
 }
 
 .custom-bot-content .card:hover {
