@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Schwarz - Minecraft Console & Log Bot</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-rUA3D23NAmAc0F8C+UlY4+LZtY50y7k9TVq6x3Q93K2eA3EvsLQewKrRf+Z2Y3W7FQo+ZSRTPz3MFMFJf3yQ7A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      background-color: #f5f5f5;
-      color: #333;
+      background-color: #121212;
+      color: #f0f0f0;
     }
 
     header {
@@ -48,6 +48,11 @@
       padding: 10px 20px;
       text-decoration: none;
       border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #4752c4;
     }
 
     section {
@@ -68,22 +73,30 @@
     }
 
     .card {
-      background: white;
+      background-color: #1e1e1e;
+      color: #f0f0f0;
       padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
       width: 300px;
       text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s;
     }
 
-    .feature-cards .card:nth-child(3) i {
-      color: #8F9CFB;
+    .card:hover {
+      transform: translateY(-5px);
+      background-color: #2a2a2a;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
     }
 
     .card i {
       font-size: 2em;
       margin-bottom: 10px;
-      color: #5865F2;
+      color: #8F9CFB;
+    }
+
+    .feature-cards .card:nth-child(3) i {
+      color: #8F9CFB;
     }
 
     .command-alternate {
@@ -92,26 +105,8 @@
       margin: 0 5px;
     }
 
-    /* Gradient Background from Features onward */
-    #features, #commands, #custom-bot, footer {
-      background: linear-gradient(to bottom, #ffffff, #1a1a1a);
-      color: white;
-    }
-
-    #features .card,
-    #commands .card,
-    #custom-bot .card {
-      background-color: #2a2a2a;
-      color: white;
-      border: 1px solid #444;
-    }
-
-    #features .card i,
-    #custom-bot .card i {
-      color: #8F9CFB;
-    }
-
     footer {
+      background-color: #1a1a1a;
       padding: 30px 20px;
       text-align: center;
     }
