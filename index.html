@@ -1,11 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Schwarz - Minecraft Console & Log Bot</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-rUA3D23NAmAc0F8C+UlY4+LZtY50y7k9TVq6x3Q93K2eA3EvsLQewKrRf+Z2Y3W7FQo+ZSRTPz3MFMFJf3yQ7A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Optional Inline Styles for Quick Testing -->
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; background-color: #f9f9f9; color: #333; }
+        header { background-color: #1e1e2f; color: white; padding: 40px 20px; text-align: center; }
+        .update-banner { background-color: #ffdb58; padding: 5px 10px; display: inline-block; margin-top: 10px; border-radius: 5px; color: #333; }
+        .btn { display: inline-block; margin-top: 20px; background-color: #5865F2; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; }
+        section { padding: 40px 20px; }
+        h2 { text-align: center; margin-bottom: 30px; }
+        .feature-cards, .command-cards, .custom-bot-content { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+        .card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); width: 300px; text-align: center; }
+        .card i { font-size: 2em; margin-bottom: 10px; color: #5865F2; }
+        .command-alternate { margin: 0 5px; color: #888; }
+        footer { background-color: #1e1e2f; color: white; padding: 30px 20px; text-align: center; }
+        footer ul { list-style: none; padding: 0; }
+        footer a { color: #aad; text-decoration: none; }
+    </style>
 </head>
 <body>
     <header>
@@ -16,11 +32,11 @@
                 <span class="update-tag">NEW</span>
                 <span>Now Supports Hybrid Commands!!</span>
             </div>
+            <br>
             <a href="https://discord.com/oauth2/authorize?client_id=1331582724636545087" target="_blank" class="btn">Invite to Server</a>
         </div>
     </header>
 
-    <!-- Features Section -->
     <section id="features">
         <h2>Features</h2>
         <div class="feature-cards">
@@ -42,42 +58,19 @@
         </div>
     </section>
 
-    <!-- Commands Section -->
     <section id="commands">
         <h2>Commands</h2>
         <div class="command-cards">
-            <div class="card">
-                <code>?clear</code> <span class="command-alternate">or</span> <code>/clear</code>
-                <p>Clears a number of messages as the user specifies.</p>
-            </div>
-            <div class="card">
-                <code>?ban</code> <span class="command-alternate">or</span> <code>/ban</code>
-                <p>Bans a user from the server.</p>
-            </div>
-            <div class="card">
-                <code>?warn</code> <span class="command-alternate">or</span> <code>/warn</code>
-                <p>Warns a user for breaking rules.</p>
-            </div>
-            <div class="card">
-                <code>?mute</code> <span class="command-alternate">or</span> <code>/mute</code>
-                <p>Mutes a user for a specific duration.</p>
-            </div>
-            <div class="card">
-                <code>?unmute</code> <span class="command-alternate">or</span> <code>/unmute</code>
-                <p>Unmutes a previously muted user.</p>
-            </div>
-            <div class="card">
-                <code>?kick</code> <span class="command-alternate">or</span> <code>/kick</code>
-                <p>Kicks a user from the server.</p>
-            </div>
-            <div class="card">
-                <code>?ping</code> <span class="command-alternate">or</span> <code>/ping</code>
-                <p>Checks the bot's latency.</p>
-            </div>
+            <div class="card"><code>?clear</code> <span class="command-alternate">or</span> <code>/clear</code><p>Clears a number of messages as the user specifies.</p></div>
+            <div class="card"><code>?ban</code> <span class="command-alternate">or</span> <code>/ban</code><p>Bans a user from the server.</p></div>
+            <div class="card"><code>?warn</code> <span class="command-alternate">or</span> <code>/warn</code><p>Warns a user for breaking rules.</p></div>
+            <div class="card"><code>?mute</code> <span class="command-alternate">or</span> <code>/mute</code><p>Mutes a user for a specific duration.</p></div>
+            <div class="card"><code>?unmute</code> <span class="command-alternate">or</span> <code>/unmute</code><p>Unmutes a previously muted user.</p></div>
+            <div class="card"><code>?kick</code> <span class="command-alternate">or</span> <code>/kick</code><p>Kicks a user from the server.</p></div>
+            <div class="card"><code>?ping</code> <span class="command-alternate">or</span> <code>/ping</code><p>Checks the bot's latency.</p></div>
         </div>
     </section>
 
-    <!-- Need a Bot for Yourself? Section -->
     <section id="custom-bot">
         <h2>Need a Bot for Yourself?</h2>
         <div class="custom-bot-content">
