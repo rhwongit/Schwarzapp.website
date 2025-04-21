@@ -1,97 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Schwarz - Minecraft Console & Log Bot</title>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-rUA3D23NAmAc0F8C+UlY4+LZtY50y7k9TVq6x3Q93K2eA3EvsLQewKrRf+Z2Y3W7FQo+ZSRTPz3MFMFJf3yQ7A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Optional Inline Styles for Quick Testing -->
-    <style>
-        body { font-family: Arial, sans-serif; margin: 0; background-color: #f9f9f9; color: #333; }
-        header { background-color: #1e1e2f; color: white; padding: 40px 20px; text-align: center; }
-        .update-banner { background-color: #ffdb58; padding: 5px 10px; display: inline-block; margin-top: 10px; border-radius: 5px; color: #333; }
-        .btn { display: inline-block; margin-top: 20px; background-color: #5865F2; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; }
-        section { padding: 40px 20px; }
-        h2 { text-align: center; margin-bottom: 30px; }
-        .feature-cards, .command-cards, .custom-bot-content { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
-        .card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); width: 300px; text-align: center; }
-        .card i { font-size: 2em; margin-bottom: 10px; color: #5865F2; }
-        .command-alternate { margin: 0 5px; color: #888; }
-        footer { background-color: #1e1e2f; color: white; padding: 30px 20px; text-align: center; }
-        footer ul { list-style: none; padding: 0; }
-        footer a { color: #aad; text-decoration: none; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Schwarz - Minecraft Console & Log Bot</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-rUA3D23NAmAc0F8C+UlY4+LZtY50y7k9TVq6x3Q93K2eA3EvsLQewKrRf+Z2Y3W7FQo+ZSRTPz3MFMFJf3yQ7A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    header {
+      background-color: #1e1e2f;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .update-banner {
+      background-color: #4C65BE;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 20px;
+      display: inline-flex;
+      align-items: center;
+      margin: 15px 0;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+
+    .update-tag {
+      background-color: #3A4F9E;
+      padding: 3px 8px;
+      border-radius: 10px;
+      margin-right: 8px;
+      font-size: 0.8rem;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      background-color: #5865F2;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    section {
+      padding: 40px 20px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #64ED95;
+    }
+
+    .feature-cards, .command-cards, .custom-bot-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      width: 300px;
+      text-align: center;
+    }
+
+    .feature-cards .card:nth-child(3) i {
+      color: #64ED95;
+    }
+
+    .card i {
+      font-size: 2em;
+      margin-bottom: 10px;
+      color: #5865F2;
+    }
+
+    .command-alternate {
+      color: #b0b0b0;
+      font-size: 0.9rem;
+      margin: 0 5px;
+    }
+
+    /* Gradient Background from Features onward */
+    #features, #commands, #custom-bot, footer {
+      background: linear-gradient(to bottom, #ffffff, #1a1a1a);
+      color: white;
+    }
+
+    #features .card,
+    #commands .card,
+    #custom-bot .card {
+      background-color: #2a2a2a;
+      color: white;
+      border: 1px solid #444;
+    }
+
+    #features .card i,
+    #custom-bot .card i {
+      color: #64ED95;
+    }
+
+    footer {
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    footer ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    footer a {
+      color: #64ED95;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <h1>Schwarz</h1>
-            <p>A Minecraft Console and Log Bot - Supports Moderation Commands and Responds to Certain Messages</p>
-            <div class="update-banner">
-                <span class="update-tag">NEW</span>
-                <span>Now Supports Hybrid Commands!!</span>
-            </div>
-            <br>
-            <a href="https://discord.com/oauth2/authorize?client_id=1331582724636545087" target="_blank" class="btn">Invite to Server</a>
-        </div>
-    </header>
+  <header>
+    <div class="header-content">
+      <h1>Schwarz</h1>
+      <p>A Minecraft Console and Log Bot - Supports Moderation Commands and Responds to Certain Messages</p>
+      <div class="update-banner">
+        <span class="update-tag">NEW</span>
+        <span>Now Supports Hybrid Commands!!</span>
+      </div>
+      <br>
+      <a href="https://discord.com/oauth2/authorize?client_id=1331582724636545087" target="_blank" class="btn">Invite to Server</a>
+    </div>
+  </header>
 
-    <section id="features">
-        <h2>Features</h2>
-        <div class="feature-cards">
-            <div class="card">
-                <i class="fas fa-laugh"></i>
-                <h3>Fun Commands</h3>
-                <p>Ask the bot "tell me a joke" to hear an offensive joke or maybe a normal one.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-tools"></i>
-                <h3>Moderation Tools</h3>
-                <p>Manage your server with powerful moderation commands like ban, kick, mute, and more.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-cogs"></i>
-                <h3>Hybrid Commands</h3>
-                <p>Supports both traditional (?) and slash (/) command formats for maximum compatibility.</p>
-            </div>
-        </div>
-    </section>
+  <section id="features">
+    <h2>Features</h2>
+    <div class="feature-cards">
+      <div class="card">
+        <i class="fas fa-laugh"></i>
+        <h3>Fun Commands</h3>
+        <p>Ask the bot "tell me a joke" to hear an offensive joke or maybe a normal one.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-tools"></i>
+        <h3>Moderation Tools</h3>
+        <p>Manage your server with powerful moderation commands like ban, kick, mute, and more.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-cogs"></i>
+        <h3>Hybrid Commands</h3>
+        <p>Supports both traditional (?) and slash (/) command formats for maximum compatibility.</p>
+      </div>
+    </div>
+  </section>
 
-    <section id="commands">
-        <h2>Commands</h2>
-        <div class="command-cards">
-            <div class="card"><code>?clear</code> <span class="command-alternate">or</span> <code>/clear</code><p>Clears a number of messages as the user specifies.</p></div>
-            <div class="card"><code>?ban</code> <span class="command-alternate">or</span> <code>/ban</code><p>Bans a user from the server.</p></div>
-            <div class="card"><code>?warn</code> <span class="command-alternate">or</span> <code>/warn</code><p>Warns a user for breaking rules.</p></div>
-            <div class="card"><code>?mute</code> <span class="command-alternate">or</span> <code>/mute</code><p>Mutes a user for a specific duration.</p></div>
-            <div class="card"><code>?unmute</code> <span class="command-alternate">or</span> <code>/unmute</code><p>Unmutes a previously muted user.</p></div>
-            <div class="card"><code>?kick</code> <span class="command-alternate">or</span> <code>/kick</code><p>Kicks a user from the server.</p></div>
-            <div class="card"><code>?ping</code> <span class="command-alternate">or</span> <code>/ping</code><p>Checks the bot's latency.</p></div>
-        </div>
-    </section>
+  <section id="commands">
+    <h2>Commands</h2>
+    <div class="command-cards">
+      <div class="card"><code>?clear</code> <span class="command-alternate">or</span> <code>/clear</code><p>Clears a number of messages as the user specifies.</p></div>
+      <div class="card"><code>?ban</code> <span class="command-alternate">or</span> <code>/ban</code><p>Bans a user from the server.</p></div>
+      <div class="card"><code>?warn</code> <span class="command-alternate">or</span> <code>/warn</code><p>Warns a user for breaking rules.</p></div>
+      <div class="card"><code>?mute</code> <span class="command-alternate">or</span> <code>/mute</code><p>Mutes a user for a specific duration.</p></div>
+      <div class="card"><code>?unmute</code> <span class="command-alternate">or</span> <code>/unmute</code><p>Unmutes a previously muted user.</p></div>
+      <div class="card"><code>?kick</code> <span class="command-alternate">or</span> <code>/kick</code><p>Kicks a user from the server.</p></div>
+      <div class="card"><code>?ping</code> <span class="command-alternate">or</span> <code>/ping</code><p>Checks the bot's latency.</p></div>
+    </div>
+  </section>
 
-    <section id="custom-bot">
-        <h2>Need a Bot for Yourself?</h2>
-        <div class="custom-bot-content">
-            <div class="card">
-                <i class="fas fa-download"></i>
-                <h3>Download & Customize</h3>
-                <p>Want to customize and host your own version of Schwarz? Download the bot's Python script and tailor it to your needs!</p>
-                <a href="https://github.com/rhwongit/Schwarz-Script/tree/main" target="_blank" class="btn">Download Script</a>
-            </div>
-        </div>
-    </section>
+  <section id="custom-bot">
+    <h2>Need a Bot for Yourself?</h2>
+    <div class="custom-bot-content">
+      <div class="card">
+        <i class="fas fa-download"></i>
+        <h3>Download & Customize</h3>
+        <p>Want to customize and host your own version of Schwarz? Download the bot's Python script and tailor it to your needs!</p>
+        <a href="https://github.com/rhwongit/Schwarz-Script/tree/main" target="_blank" class="btn">Download Script</a>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-        <div class="footer-content">
-            <h3>Need Help?</h3>
-            <p>Contact the developer for support:</p>
-            <ul>
-                <li><i class="fab fa-discord"></i> Discord: <strong>rhwondc</strong></li>
-                <li><i class="fas fa-envelope"></i> Email: <a href="mailto:rishwinrafeek567@gmail.com">rishwinrafeek567@gmail.com</a></li>
-            </ul>
-        </div>
-    </footer>
+  <footer>
+    <div class="footer-content">
+      <h3>Need Help?</h3>
+      <p>Contact the developer for support:</p>
+      <ul>
+        <li><i class="fab fa-discord"></i> Discord: <strong>rhwondc</strong></li>
+        <li><i class="fas fa-envelope"></i> Email: <a href="mailto:rishwinrafeek567@gmail.com">rishwinrafeek567@gmail.com</a></li>
+      </ul>
+    </div>
+  </footer>
 </body>
 </html>
